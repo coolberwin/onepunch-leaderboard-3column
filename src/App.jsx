@@ -174,7 +174,7 @@ function Clock({updateTime}) {
     <div className="w-full flex flex-col items-center mb-8">
       <h1 className="text-5xl font-extrabold mb-6 text-yellow-400 tracking-wide drop-shadow-lg px-4 py-2">琦玉Saitama 挑战赛</h1>
       <div className="flex flex-row items-center justify-center gap-4 sm:gap-8">
-        <img src="../assets/left1.png" alt="left" className="w-72 rounded-md" />
+        <img src="/assets/left1.png" alt="left" className="w-72 rounded-md" />
         <div className="bg-gray-800 p-6 rounded-xl shadow-2xl border border-yellow-500 w-full max-w-2xl">
           <p className="text-center text-yellow-400 font-bold text-2xl mb-6">挑战赛已经开始</p>
           
