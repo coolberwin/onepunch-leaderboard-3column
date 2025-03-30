@@ -240,6 +240,7 @@ function Clock({updateTime}) {
                   <li>挑战需要准备新钱包，且钱包初始金额在 2s（不能超过2.1）。</li>
                   <li>挑战期间不支持钱包转出sol，如有特殊情况，请联系小助手。</li>
                   <li>挑战者需要充足时间进行挑战。</li>
+                  <li>挑战成功者在挑战成功后联系老师，申请毕业。</li>
                 </ol>
               </div>
               
@@ -280,13 +281,8 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        // 修改前 
-        // const response = await fetch('/api/all');
-
-        // 修改后 为了 versel部署
-        // 获取所有数据（同时包含teamA和teamB）
-        const apiUrl = import.meta.env.VITE_API_URL || process.env.REACT_APP_API_URL || '';
-        const response = await fetch(`${apiUrl}/api/all`);
+        // 使用Vercel代理API而不是直接调用
+        const response = await fetch('/api/proxy');
         if (!response.ok) {
           throw new Error(`API返回错误: ${response.status}`);
         }
