@@ -276,6 +276,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [updateTime, setUpdateTime] = useState(''); // 添加更新时间状态
+  const [lastUpdateTimeStamp, setLastUpdateTimeStamp] = useState(''); // 存储上次更新时间戳
 
   useEffect(() => {
     const fetchData = async () => {
@@ -297,7 +298,18 @@ function App() {
 
         // 获取更新时间
         if (data.teamA.length > 0) {
-          setUpdateTime(data.teamA[0].update_time);
+          const newUpdateTime = data.teamA[0].update_time;
+          setUpdateTime(newUpdateTime);
+          
+          // 检查是否有数据更新（不是首次加载）
+          if (lastUpdateTimeStamp && newUpdateTime !== lastUpdateTimeStamp) {
+            console.log('检测到数据更新，刷新页面');
+            window.location.reload();
+            return;
+          }
+          
+          // 存储当前更新时间戳用于下次比较
+          setLastUpdateTimeStamp(newUpdateTime);
         }
         
         // 按rank排序
@@ -321,7 +333,7 @@ function App() {
     const intervalId = setInterval(fetchData, 30 * 60 * 1000);
     
     return () => clearInterval(intervalId);
-  }, []);
+  }, [lastUpdateTimeStamp]);
 
   return (
     <div className="p-4 max-w-screen-2xl mx-auto bg-yellow-50 min-h-screen flex flex-col items-center">
