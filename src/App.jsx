@@ -280,9 +280,13 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        
+        // 修改前 
+        // const response = await fetch('/api/all');
+
+        // 修改后 为了 versel部署
         // 获取所有数据（同时包含teamA和teamB）
-        const response = await fetch('/api/all');
+        const apiUrl = import.meta.env.VITE_API_URL || process.env.REACT_APP_API_URL || '';
+        const response = await fetch(`${apiUrl}/api/all`);
         if (!response.ok) {
           throw new Error(`API返回错误: ${response.status}`);
         }
