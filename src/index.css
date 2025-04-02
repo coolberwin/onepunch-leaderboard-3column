@@ -2,6 +2,328 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: sans-serif;
+/* 自定义字体 */
+@font-face {
+  font-family: 'HYLiLiangHeiJ';
+  src: url('./fonts/HYLiLiangHeiJ.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi_2_55_Regular';
+  src: url('./fonts/AlibabaPuHuiTi-2-55-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi_2_85_Bold';
+  src: url('./fonts/AlibabaPuHuiTi-2-85-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* 自定义样式 */
+.text-stroke-red {
+  -webkit-text-stroke: 9px #471014;
+  paint-order: stroke;
+}
+
+/* 添加字体描边效果增强 */
+.title-text {
+  font-family: 'HYLiLiangHeiJ', sans-serif;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+}
+
+.title-shadow {
+  position: absolute;
+  left: 0.5%;
+  top: 0.5%;
+  z-index: -1;
+  color: #471014;
+}
+
+/* 标题容器样式 */
+.title-container {
+  position: relative;
+  margin-top: 350px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* 重新设计标题区域 */
+.title-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 300px;
+}
+
+.title-line {
+  position: relative;
+  width: 100%;
+  height: 152px;
+  margin-bottom: 0;
+}
+
+.title-line-2 {
+  margin-top: -50px;
+}
+
+.title-red {
+  position: absolute;
+  width: 100%;
+  font-family: 'HYLiLiangHeiJ', sans-serif; /* 确保使用正确的字体 */
+  font-size: 149px;
+  font-weight: 400;
+  color: #E54739;
+  z-index: 1;
+  line-height: 152px;
+  letter-spacing: 2.98px;
+  -webkit-text-stroke: 9px #471014;
+  text-align: center;
+  text-shadow: -1px -1px 0 #471014, 1px -1px 0 #471014, -1px 1px 0 #471014, 1px 1px 0 #471014; /* 加强描边效果 */
+}
+
+.title-yellow {
+  position: absolute;
+  width: 100%;
+  font-family: 'HYLiLiangHeiJ', sans-serif;
+  font-size: 149px;
+  font-weight: 400;
+  color: #F1D938;
+  z-index: 2;
+  line-height: 152px;
+  letter-spacing: 2.98px;
+  text-align: center;
+}
+
+/* 挑战赛已开始标题样式 */
+.challenge-start-title {
+  position: relative;
+  display: inline-block;
+  padding: 10px 50px;
+  background-image: url('https://lanhu-oss-2537-2.lanhuapp.com/SketchPng9cfc80c8df3a39e709bc7c15dfd3f01e2a967f4b8c9d8504bfd9049ba0fdad4a');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* 修复挑战赛已开始框样式 */
+.challenge-status-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.challenge-status-box {
+  position: relative;
+  width: 450px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  z-index: 10;
+}
+
+.challenge-status-box h3 {
+  font-family: 'HYLiLiangHeiJ', sans-serif;
+  color: #F1D938;
+  text-align: center;
+}
+
+/* 挑战赛已开始样式修改 */
+.challenge-status-badge {
+  position: absolute;
+  right: 260px;
+  top: 80px;
+  width: 306px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 利润颜色 */
+.profit-positive {
+  color: #4BDE80 !important;
+}
+
+.profit-negative {
+  color: #E6473C !important;
+}
+
+.profit-zero {
+  color: #FFFFFF !important;
+}
+
+/* 添加更多精确的定制样式 */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.page {
+  background-color: #1C1919;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 自定义颜色 */
+.bg-challenge {
+  background-color: rgba(40, 40, 44, 1);
+}
+
+.bg-challenge-alt {
+  background-color: rgba(48, 48, 54, 1);
+}
+
+.bg-challenge-header {
+  background-color: rgba(36, 32, 32, 1);
+}
+
+.text-challenge-yellow {
+  color: rgba(241, 217, 56, 1);
+}
+
+.text-challenge-green {
+  color: rgba(75, 222, 128, 1);
+}
+
+.text-challenge-red {
+  color: rgba(230, 71, 60, 1);
+}
+
+.text-challenge-blue {
+  color: rgba(150, 189, 255, 1);
+}
+
+.text-challenge-gray {
+  color: rgba(154, 139, 135, 1);
+}
+
+/* 修复布局问题 */
+.content-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+  height: 820px;
+}
+
+/* 全屏背景修复 */
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header-title {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding-top: 320px;
+}
+
+.time-container {
+  display: flex;
+  justify-content: center;
+  gap: 68px;
+  margin-top: 39px;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 113px;
+}
+
+.timer-bg {
+  position: relative;
+  width: 113px;
+  height: 115px;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: 694px;
+  margin: 0 auto;
+  margin-top: 42px;
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 71px;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 1920px) {
+  .page {
+    zoom: 0.85;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .page {
+    zoom: 0.75;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .page {
+    zoom: 0.6;
+  }
+}
+
+

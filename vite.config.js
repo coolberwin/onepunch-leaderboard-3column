@@ -1,16 +1,17 @@
-// import { defineConfig } from 'vite'
-// import react from '@vitejs/plugin-react'
-
-// export default defineConfig({
-//   plugins: [react()]
-// })
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   server: {
+    port: 3000,
+    open: true,
     proxy: {
       '/api': {
         target: 'http://43.162.125.199:5000',
@@ -18,6 +19,14 @@ export default defineConfig({
         rewrite: (path) => path,
         secure: false
       }
-    }
-  }
+    },
+    watch: {
+      usePolling: true,
+    },
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true,
+  },
 });
