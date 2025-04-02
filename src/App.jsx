@@ -235,12 +235,8 @@ function App() {
         setLoading(true);
         
         // 使用代理API路径
-        const response = await fetch('/api/proxy?path=all', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+        const response = await fetch('/api/proxy');
+
         
         if (!response.ok) {
           console.error(`API错误: ${response.status}`);
@@ -524,7 +520,7 @@ function App() {
                 paddingBottom: "20px"
               }} 
             />
-            
+
             <ChallengeGroup 
               title="早起琦玉挑战组(第1期)" 
               data={mockData2} 
