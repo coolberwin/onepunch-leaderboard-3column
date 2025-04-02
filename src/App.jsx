@@ -234,21 +234,18 @@ function App() {
       try {
         setLoading(true);
         
-        // 直接从API获取数据
-        const apiPath = import.meta.env.VITE_API_URL || '/api';
-        const response = await fetch(`${apiPath}/all`, {
+        // 使用代理API路径
+        const response = await fetch('/api/proxy?path=all', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            // 如果需要认证，可以添加额外的头信息
-            // 'Authorization': 'Bearer your-token-here'
           },
-          // 允许跨域请求携带cookies（如果需要）
-          // credentials: 'include',
         });
         
         if (!response.ok) {
-          throw new Error(`API返回错误: ${response.status}`);
+          console.error(`API错误: ${response.status}`);
+          const errorText = await response.text();
+          throw new Error(`API错误 ${response.status}: ${errorText}`);
         }
         
         const data = await response.json();
