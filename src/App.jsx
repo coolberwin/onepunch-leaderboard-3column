@@ -138,7 +138,7 @@ const ChallengeGroup = ({ title, data, style }) => {
   return (
     <div className="relative w-[768px] h-auto mb-10" style={style}> 
       {/* 标题 */}
-      <div className="h-14 bg-center bg-no-repeat flex justify-center" style={{backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPnga0744889b1a94d50d16cf29724c3c136ba51746d38a3fe18c7ad99db603258ac)"}}>
+      <div className="h-14 bg-center bg-no-repeat flex justify-center" style={{backgroundImage: "url(/assets/lanhu/title-bg.png)"}}>
         <h3 className="text-white text-[22px] font-bold pt-[15px]">{title}</h3>
       </div>
 
@@ -333,7 +333,8 @@ function App() {
   return (
     <div className="page">
       <div className="w-full">
-        <img src="../public/assets/banner.png" alt="banner" className="w-full" />
+        {/* <img src="../public/assets/banner.png" alt="banner" className="w-full" /> */}
+        <img src="./assets/banner.png" alt="banner" className="w-full" />
       </div>
 
       {/* 挑战赛已开始样式 - 使用纯Tailwind */}
@@ -354,32 +355,32 @@ function App() {
       
       <div className="content-container">
         {/* 主内容区域 */}
-        <div className="w-full bg-no-repeat bg-cover" style={{ backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPng2924c031b60e4918bc612d841661926b2544488675c784c7d99d031e4d0f5030)" }}>
+        <div className="w-full bg-no-repeat bg-cover" style={{ backgroundImage: "url(/assets/lanhu/main-bg.png)" }}>
         {/* 倒计时 */}
         <div className="time-container">
           <div className="timer-unit">
-            <div className="timer-bg" style={{backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPng07d6bbc8c702a47e512d26efb3f6d6389e4418454e1e8dfdec55ba9ea88c6864)"}}>
+            <div className="timer-bg" style={{backgroundImage: "url(/assets/lanhu/timer-bg.png)"}}>
               <span className="text-[#46332D] text-[68px] font-normal tracking-[1.36px]">{String(timeLeft.days).padStart(2, '0')}</span>
             </div>
             <span className="text-white text-[18px] font-normal tracking-[0.36px] mt-[9px]">天</span>
           </div>
           
           <div className="timer-unit">
-            <div className="timer-bg" style={{backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPng07d6bbc8c702a47e512d26efb3f6d6389e4418454e1e8dfdec55ba9ea88c6864)"}}>
+            <div className="timer-bg" style={{backgroundImage: "url(/assets/lanhu/timer-bg.png)"}}>
               <span className="text-[#46332D] text-[68px] font-normal tracking-[1.36px]">{String(timeLeft.hours).padStart(2, '0')}</span>
             </div>
             <span className="text-white text-[18px] font-normal tracking-[0.36px] mt-[9px]">时</span>
           </div>
           
           <div className="timer-unit">
-            <div className="timer-bg" style={{backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPng07d6bbc8c702a47e512d26efb3f6d6389e4418454e1e8dfdec55ba9ea88c6864)"}}>
+            <div className="timer-bg" style={{backgroundImage: "url(/assets/lanhu/timer-bg.png)"}}>
               <span className="text-[#46332D] text-[68px] font-normal tracking-[1.36px]">{String(timeLeft.minutes).padStart(2, '0')}</span>
             </div>
             <span className="text-white text-[18px] font-normal tracking-[0.36px] mt-[9px]">分</span>
           </div>
           
           <div className="timer-unit">
-            <div className="timer-bg" style={{backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPng07d6bbc8c702a47e512d26efb3f6d6389e4418454e1e8dfdec55ba9ea88c6864)"}}>
+            <div className="timer-bg" style={{backgroundImage: "url(/assets/lanhu/timer-bg.png)"}}>
               <span className="text-[#46332D] text-[68px] font-normal tracking-[1.36px]">{String(timeLeft.seconds).padStart(2, '0')}</span>
             </div>
             <span className="text-white text-[18px] font-normal tracking-[0.36px] mt-[9px]">秒</span>
@@ -438,7 +439,7 @@ function App() {
                       </ol> */}
                         <ol className="list-decimal ml-8 text-sm space-y-1">
                           <li>创建新钱包并转入2.1/4.1 S（0.1S误差），开赛前1天需告知助理；</li>
-                          <li>每位挑战者需在挑战期间，必须每晚按时发布推特复盘🔖；</li>
+                          <li>每位挑战者需在挑战期间，必须必须每晚按时发布推特复盘🔖；</li>
                           <li>每期当20个参与者达成目标后，即算挑战结束。未完成者可作为补充人员参与后两组比赛，机会仅限一次；若仍未达标，则需等到下一期挑战赛再参加💥；</li>
                           <li>分润规则💰：当达成8 SOL目标后，每位挑战者分润给老师1 SOL；当达成16 SOL目标后，每位挑战者分润给老师2 SOL；</li>
                           <li>参赛期间请勿随意转入或转出SOL；</li>
@@ -467,14 +468,14 @@ function App() {
               {/* 添加点击事件打开Twitter */}
               <img 
                 className="w-[44px] h-[44px] cursor-pointer" 
-                src="https://lanhu-oss-2537-2.lanhuapp.com/SketchPng33c00868ef8e0bc77f337d13f630021a4e7b6e205c94a208d3d20a5b4fc2596b" 
+                src="/assets/lanhu/twitter-icon.png" 
                 alt="Twitter" 
                 onClick={handleTwitterClick}
               />
               {/* 添加点击事件打开Telegram */}
               <img 
                 className="w-[40px] h-[40px] mt-[2px] cursor-pointer" 
-                src="https://lanhu-oss-2537-2.lanhuapp.com/SketchPng5328c3039afdb70d899be647e38f9ebb620903af75b6ff4cda0dd7d12827249f" 
+                src="/assets/lanhu/telegram-icon.png" 
                 alt="Telegram" 
                 onClick={handleTelegramClick}
               />
@@ -482,7 +483,7 @@ function App() {
           </div>
           
           <div className="flex justify-center mt-[49px]">
-            <img className="w-[90%] h-[1px]" src="https://lanhu-oss-2537-2.lanhuapp.com/SketchPng90d634f4e661e7ec52df0ab95eb718e76fc7267ea600cbafc12aa714cc90b63b" alt="" />
+            <img className="w-[90%] h-[1px]" src="/assets/lanhu/divider.png" alt="分隔线" />
           </div>
           
 
@@ -519,7 +520,7 @@ function App() {
               title="内敛niko挑战组(1期)" 
               data={mockData1} 
               style={{
-                backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPng63586989f94b144246fc88d7c97e98f372e966147137f76cdef11f46b833da4c)", 
+                backgroundImage: "url(/assets/lanhu/leaderboard-bg.png)", 
                 backgroundSize: "100% 100%", 
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
@@ -530,7 +531,7 @@ function App() {
               title="早起琦玉挑战组(第1期)" 
               data={mockData2} 
               style={{
-                backgroundImage: "url(https://lanhu-oss-2537-2.lanhuapp.com/SketchPng63586989f94b144246fc88d7c97e98f372e966147137f76cdef11f46b833da4c)",  // 使用相同图片
+                backgroundImage: "url(/assets/lanhu/leaderboard-bg.png)", 
                 backgroundSize: "100% 100%", 
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",

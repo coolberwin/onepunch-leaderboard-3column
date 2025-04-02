@@ -9,3 +9,5 @@ npm run dev
 部署到 vercel
 
 npm run build
+
+npm run preview 

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
+  base: './', // 设置基本路径为相对路径
   plugins: [react()],
   resolve: {
     alias: {
