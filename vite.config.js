@@ -16,7 +16,7 @@ export default defineConfig({
       '/api': {
         target: 'http://43.162.125.199:5000',
         changeOrigin: true,
-        rewrite: (path) => path,
+        rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false
       }
     },
@@ -27,6 +27,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true,
+    sourcemap: false, // 生产环境关闭 sourcemap
   },
 });

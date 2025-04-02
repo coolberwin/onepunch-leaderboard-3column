@@ -235,7 +235,8 @@ function App() {
         setLoading(true);
         
         // 直接从API获取数据
-        const response = await fetch('/api/all', {
+        const apiPath = import.meta.env.VITE_API_URL || '/api';
+        const response = await fetch(`${apiPath}/all`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
