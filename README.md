@@ -4,3 +4,8 @@ npm install
 
 
 npm run dev
+
+
+部署到 vercel
+
+npm run build
