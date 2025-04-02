@@ -524,6 +524,7 @@ function App() {
                 paddingBottom: "20px"
               }} 
             />
+            
             <ChallengeGroup 
               title="早起琦玉挑战组(第1期)" 
               data={mockData2} 
